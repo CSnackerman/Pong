@@ -1,0 +1,21 @@
+header {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: x-large;
+    text-align: center;
+    color: cyan;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+body {
+    background-color: midnightblue;   
+}
+
+canvas {
+    border:3px solid #ffa5f3;
+    background-color:purple;
+
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
