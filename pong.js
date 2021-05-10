@@ -5,14 +5,14 @@ const DEGREES360 = Math.PI * 2;
 const canvas = document.getElementById("pongCanvas");
 const ctx = canvas.getContext("2d");
 
-// Set the canvas size
+// set the canvas size
 const C_WIDTH = window.innerWidth / 2;
 const C_HEIGHT = window.innerHeight / 2;
 
 ctx.canvas.width = C_WIDTH;
 ctx.canvas.height = C_HEIGHT;
 
-// Dimensions
+// paddle size and position
 const P_HEIGHT = C_HEIGHT / 5;
 const P_WIDTH = C_WIDTH / 30;
 
@@ -81,6 +81,8 @@ class Paddle {
 }
 
 class Ball {
+
+    // fields
     #color = "#FFFFFF";
     #radius = 0;
     #position = {
@@ -152,6 +154,8 @@ addEventListener('keyup', (event) => {
             break;
     };
 });
+
+// -----
 
 function primary_loop() {
 
