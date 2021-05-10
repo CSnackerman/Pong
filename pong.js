@@ -110,54 +110,48 @@ var paddle_r = new Paddle ("right");
 // controls
 var upIsDown = false;
 var downIsDown = false;
-addEventListener('keydown', 
-    (event) => {
+addEventListener('keydown', (event) => {
 
-        if (upIsDown == true || downIsDown == true) {
-            return;
-        }
-
-        console.log (`pressed ${event.key} (${event.code})`);
-
-        let key = event.key;
-
-        switch (key) {
-            case ",":
-                upIsDown = true;
-                paddle_l.accelerate();
-                break;
-
-            case ".":
-                downIsDown = true;
-                paddle_l.decelerate();
-                break;
-        };
+    if (upIsDown == true || downIsDown == true) {
+        return;
     }
-    ,false
-);
+
+    console.log (`pressed ${event.key} (${event.code})`);
+
+    let key = event.key;
+
+    switch (key) {
+        case ",":
+            upIsDown = true;
+            paddle_l.accelerate();
+            break;
+
+        case ".":
+            downIsDown = true;
+            paddle_l.decelerate();
+            break;
+    };
+});
 
 
-addEventListener('keyup', 
-    (event) => {
+addEventListener('keyup', (event) => {
 
-        console.log (`released ${event.key} (${event.code})`);
+    console.log (`released ${event.key} (${event.code})`);
 
-        let key = event.key;
+    let key = event.key;
 
-        switch (key) {
-            case ",":
-                upIsDown = false;
-                paddle_l.stop();
-                break;
+    switch (key) {
+        case ",":
+            upIsDown = false;
+            paddle_l.stop();
+            break;
 
-            case ".":
-                downIsDown = false;
-                paddle_l.stop();
-                break;
-        };
-    }
-    ,false
-);
+        case ".":
+            downIsDown = false;
+            paddle_l.stop();
+            break;
+    };
+});
 
 function primary_loop() {
 
