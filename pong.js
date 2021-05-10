@@ -12,7 +12,7 @@ const C_HEIGHT = window.innerHeight / 2;
 ctx.canvas.width = C_WIDTH;
 ctx.canvas.height = C_HEIGHT;
 
-// Config
+// Dimensions
 const P_HEIGHT = C_HEIGHT / 5;
 const P_WIDTH = C_WIDTH / 30;
 
