@@ -1,9 +1,11 @@
 // precalculations
 const DEGREES360 = Math.PI * 2;
 
+
 // get canvas and context
 const canvas = document.getElementById("pongCanvas");
 const ctx = canvas.getContext("2d");
+
 
 // set the canvas size
 var C_WIDTH = window.innerWidth / 2;
@@ -12,12 +14,14 @@ var C_HEIGHT = window.innerHeight / 2;
 ctx.canvas.width = C_WIDTH;
 ctx.canvas.height = C_HEIGHT;
 
+
 // paddle size and position
 var P_HEIGHT = C_HEIGHT / 5;
 var P_WIDTH = C_WIDTH / 30;
 
 var P_START_X = 10;
 var P_START_Y = C_HEIGHT / 2 - P_HEIGHT / 2;
+
 
 // ball configuration
 const B_SIZE = 15;
@@ -44,6 +48,7 @@ addEventListener ("resize", () => {
     paddle_r = new Paddle ("right");
 
 });
+
 
 
 class Paddle {
@@ -132,11 +137,13 @@ class Ball {
 }
 
 // Game objects
-var ball = new Ball (B_SIZE);
-var paddle_l = new Paddle ("left");
-var paddle_r = new Paddle ("right");
+var ball        = new Ball (B_SIZE);
+var paddle_l    = new Paddle ("left");
+var paddle_r    = new Paddle ("right");
 
-// controls:
+
+
+// --- controls ---
 
 // key states
 var upIsDown = false;
@@ -174,7 +181,8 @@ addEventListener('keyup', (event) => {
 
     let key = event.key;
 
-    switch (key) {
+    switch (key) 
+    {
         case ",":
             upIsDown = false;
             paddle_l.stop();
@@ -187,7 +195,7 @@ addEventListener('keyup', (event) => {
     };
 });
 
-// -----
+// ----- main loop (for animation) -----
 
 function primary_loop() {
 
