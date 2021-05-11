@@ -131,7 +131,7 @@ class Ball {
 }
 
 // Game objects
-var ball = new Ball(7);
+var ball = new Ball (B_SIZE);
 var paddle_l = new Paddle ("left");
 var paddle_r = new Paddle ("right");
 
