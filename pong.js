@@ -128,6 +128,7 @@ class Ball {
         ctx.fillStyle = this.#color;
         ctx.fill();
     }
+    
 }
 
 // Game objects
@@ -135,9 +136,13 @@ var ball = new Ball (B_SIZE);
 var paddle_l = new Paddle ("left");
 var paddle_r = new Paddle ("right");
 
-// controls
+// controls:
+
+// key states
 var upIsDown = false;
 var downIsDown = false;
+
+// event handler - KEYDOWN
 addEventListener('keydown', (event) => {
 
     if (upIsDown == true || downIsDown == true) {
@@ -162,6 +167,7 @@ addEventListener('keydown', (event) => {
 });
 
 
+// event handler - KEYUP
 addEventListener('keyup', (event) => {
 
     console.log (`released ${event.key} (${event.code})`);
