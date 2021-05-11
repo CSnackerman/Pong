@@ -6,18 +6,44 @@ const canvas = document.getElementById("pongCanvas");
 const ctx = canvas.getContext("2d");
 
 // set the canvas size
-const C_WIDTH = window.innerWidth / 2;
-const C_HEIGHT = window.innerHeight / 2;
+var C_WIDTH = window.innerWidth / 2;
+var C_HEIGHT = window.innerHeight / 2;
 
 ctx.canvas.width = C_WIDTH;
 ctx.canvas.height = C_HEIGHT;
 
 // paddle size and position
-const P_HEIGHT = C_HEIGHT / 5;
-const P_WIDTH = C_WIDTH / 30;
+var P_HEIGHT = C_HEIGHT / 5;
+var P_WIDTH = C_WIDTH / 30;
 
-const P_START_X = 10;
-const P_START_Y = C_HEIGHT / 2 - P_HEIGHT / 2;
+var P_START_X = 10;
+var P_START_Y = C_HEIGHT / 2 - P_HEIGHT / 2;
+
+// ball configuration
+const B_SIZE = 15;
+
+
+// event handler - RESIZE
+addEventListener ("resize", () => {
+    // set the canvas size
+    C_WIDTH = window.innerWidth / 2;
+    C_HEIGHT = window.innerHeight / 2;
+
+    ctx.canvas.width = C_WIDTH;
+    ctx.canvas.height = C_HEIGHT;
+
+    // paddle size and position
+    P_HEIGHT = C_HEIGHT / 5;
+    P_WIDTH = C_WIDTH / 30;
+
+    P_START_X = 10;
+    P_START_Y = C_HEIGHT / 2 - P_HEIGHT / 2;
+
+    ball = new Ball(B_SIZE);
+    paddle_l = new Paddle ("left");
+    paddle_r = new Paddle ("right");
+
+});
 
 
 class Paddle {
