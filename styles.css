@@ -3,12 +3,13 @@ header {
     font-size: x-large;
     text-align: center;
     color: cyan;
+    font-size: 500%;
     font-weight: bold;
     margin-bottom: 1%;
 }
 
 body {
-    background-color: midnightblue;   
+    background-color: #0d0d3f;   
 }
 
 canvas {
